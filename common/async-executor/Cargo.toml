@@ -1,0 +1,17 @@
+[package]
+name        = "async-executor"
+version     = "0.1.0"
+authors     = ["Tobias Pfeiffer <tobias@tobiaspfeiffer.net>"]
+edition     = "2018"
+publish     = false
+repository  = "https://gitlab.com/TobiP64/rust-common"
+license     = "MIT"
+description = "A very basic queue-based async executor"
+
+[features]
+default = ["conquer-once", "num_cpus"]
+
+[dependencies]
+log          = "^0.4"
+conquer-once = { version = "0.3.2", optional = true }
+num_cpus     = { version = "^1.13", optional = true }

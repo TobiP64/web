@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+service Database {
+  rpc query (stream QueryRequest) returns (stream QueryResult) {}
+
+  rpc no_reply_wait (Empty) returns (Empty) {}
+
+  rpc shutdown_node (ShutdownRequest) returns (Empty) {}
+
+  /// sends node info, returns topology info
+  rpc advertise_node (Datum) returns (Datum) {}
+}
+
+message Empty {}
+
+message Datum {
+  message KeyVal {
+    sfixed32 key = 1;
+    Datum    val = 2;
+  }
+
+  optional sfixed32 int32     = 1;
+  optional sfixed64 int64     = 2;
+  optional float    float32   = 3;
+  optional double   float64   = 4;
+  optional bool     bool      = 5;
+  optional string   string    = 6;
+  optional bytes    bytes     = 7;
+  repeated KeyVal   object    = 8;
+  repeated Datum    array     = 9;
+  optional fixed64  datetime  = 10;
+  optional bytes    procedure = 11;
+}
+
+message Query {
+  bytes    ccn   = 1;
+  oneof query_or_id {
+    bytes    cqn   = 2;
+    bytes    query = 3;
+  }
+  sfixed32 flags = 4;
+}
+
+message QueryRequest {
+  oneof query_or_data {
+    Query query = 1;
+    Datum data  = 2;
+  }
+}
+
+message Frame {
+  fixed32 frame = 1;
+}
+
+message Backtrace {
+  repeated Frame frames = 1;
+}
+
+message QueryResult {
+  enum Status {
+    SUCCESS = 0;
+  }
+
+           Status    status    = 1;
+  optional string    error     = 2;
+  optional Backtrace backtrace = 3;
+  optional Datum     profile   = 4;
+  repeated Datum     data      = 5;
+}
+
+message ShutdownRequest {
+  ShutdownType shutdownType = 1;
+}
+
+enum ShutdownType {
+  DISCONNECTED = 0;
+  COMMITTED    = 1;
+  IMMEDIATE    = 2;
+  ABORT        = 3;
+}

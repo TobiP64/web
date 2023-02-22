@@ -1,0 +1,23 @@
+[package]
+name         = "kranus-db-grafana-datasource-backend"
+version      = "0.1.0"
+authors      = ["Tobias Pfeiffer <tobias.pfeiffer@3d7eed74.net>"]
+edition      = "2021"
+rust-version = "1.58"
+repository   = "https://gitlab.com/TobiP64/kranus"
+license      = "MIT"
+description  = ""
+
+[dependencies]
+kranus-db-driver   = { path = "../driver", features = ["async"] }
+async-executor     = { path = "../../common/async-executor" }
+stdout-log         = { path = "../../common/stdout-log" }
+serde-dyn-repr     = { path = "../../common/serde-dyn-repr" }
+log                = "^0.4"
+smol               = "^1.2"
+grafana-plugin-sdk = "^0.1"
+url                = "^2.2"
+chrono             = "^0.4"
+serde              = { version = "^1.0", features = ["derive"] }
+xxhash-rust        = { version = "^0.8", features = ["xxh3"] }
+async-trait        = "^0.1"

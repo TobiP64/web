@@ -1,0 +1,16 @@
+[package]
+name         = "quote-html"
+version      = "0.1.0"
+authors      = ["Tobias Pfeiffer <tobias@tobiaspfeiffer.net>"]
+edition      = "2021"
+rust-version = "1.58"
+repository   = "https://gitlab.com/TobiP64/net"
+license      = "MIT"
+description  = "Proc-macro based inline HTML support for Rust, to be used in WASM environments"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "^1.0"
+quote       = "^1.0"

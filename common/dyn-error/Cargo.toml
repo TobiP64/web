@@ -1,0 +1,9 @@
+[package]
+name        = "dyn-error"
+version     = "0.1.0"
+authors     = ["Tobias Pfeiffer <tobias@tobiaspfeiffer.net>"]
+edition     = "2018"
+publish     = false
+repository  = "https://gitlab.com/TobiP64/rust-common"
+license     = "MIT"
+description = "Dynamic errors, intended for passing errors from dynamically loaded libraries"

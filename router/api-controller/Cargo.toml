@@ -1,0 +1,17 @@
+[package]
+name         = "kranus-router-api-controller"
+version      = "0.1.0"
+authors      = ["Tobias Pfeiffer <tobias.pfeiffer@3d7eed74.net>"]
+edition      = "2021"
+rust-version = "1.58"
+repository   = "https://gitlab.com/TobiP64/kranus"
+license      = "MIT"
+description  = "A proc-macro for request routing, meant to be used in kranus-router plugins"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "^1.0"
+syn         = { version = "^1.0", features = ["full"] }
+quote       = "^1.0"

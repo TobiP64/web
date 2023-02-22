@@ -1,0 +1,11 @@
+[package]
+name         = "kranus-router-db-bridge"
+version      = "0.1.0"
+authors      = ["Tobias Pfeiffer <tobias.pfeiffer@3d7eed74.net>"]
+edition      = "2021"
+rust-version = "1.58"
+repository   = "https://gitlab.com/TobiP64/kranus"
+license      = "MIT"
+description  = ""
+
+[dependencies]

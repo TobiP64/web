@@ -1,0 +1,27 @@
+[workspace]
+members = [
+#	"cli",
+    "common/async-executor",
+    "common/debug-impl",
+    "common/dyn-error",
+    "common/quote-html",
+    "common/serde-dyn-repr",
+    "common/stdout-log",
+	"common/protocols",
+	"common/otel-mrt",
+	"db/console-backend",
+	"db/console-frontend",
+	"db/driver",
+	"db/grafana-datasource-backend",
+	"db/node",
+	"router/console-backend",
+	"router/console-frontend",
+	"router/api",
+	"router/api-controller",
+	"router/db-bridge",
+	"router/node",
+]
+
+[profile.release]
+lto = "fat"
+codegen-units = 1

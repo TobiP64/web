@@ -1,0 +1,13 @@
+[package]
+name        = "stdout-log"
+version     = "0.1.0"
+authors     = ["Tobias Pfeiffer <tobias@tobiaspfeiffer.net>"]
+edition     = "2018"
+publish     = false
+repository  = "https://gitlab.com/TobiP64/rust-common"
+license     = "MIT"
+description = "A simple logger that logs to `std::out`"
+
+[dependencies]
+log    = "^0.4"
+chrono = "^0.4"

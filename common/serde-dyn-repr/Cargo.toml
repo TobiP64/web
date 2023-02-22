@@ -1,0 +1,12 @@
+[package]
+name        = "serde-dyn-repr"
+version     = "0.1.0"
+authors     = ["Tobias Pfeiffer <tobias@tobiaspfeiffer.net>"]
+edition     = "2018"
+publish     = false
+repository  = "https://gitlab.com/TobiP64/rust-common"
+license     = "MIT"
+description = "A dynamic representation for deserialized data"
+
+[dependencies]
+serde = { version = "^1.0", features = ["derive"] }
